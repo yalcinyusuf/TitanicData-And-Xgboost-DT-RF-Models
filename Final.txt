@@ -1,0 +1,143 @@
+Ödevin adımları:
+Steps of the project:
+
+0) veriyi yükleyin ve gerekli yerlerde random_state kullanın ki, kodunuzun sonucu, sonrasında değişmesin.
+
+0) Load the data and use random_state variable where it is necessary, so that your result will be same.
+
+1) Data'nın büyüklüğünü bulun.
+1) Find the size of data.
+
+2) Data'nın nasıl göründüğünü gösterin. (İlk 5 satır veya son 5 satır)
+2) show the first or last 5 rows of the data.
+
+3) Data'nın sütunlarında hangi veri türleri bulunmaktadır?
+3) What is the data type of our feature variables?
+
+4) Hangi sütunda, kaç tane eksik verimiz var?
+4) How many data is missing for each column?
+
+5) Verimizin count, mean, std. dev, quartile gibi özelliklerini gösterin.
+5) find count mean standard deviation and quartile of our dataset
+
+6) Verimizde inconsistent data entry var mı, kontrol edin.
+6) Check whether there are any inconsistent data entry in our datasets
+
+7) Kategorik ve sayısal veriler için gerekli görsellerden çıkarım yapın. (Vizedeki gibi değil, gerçekten mantıklı olduğunu düşündüğünüz şeyleri gösterin. (Ne gereğinden az, ne de anlamsız derecede fazla))
+7) make an inference from plots of categorical and numerical feature variables. (I want you to show required plots rather than showing all of them. Show all meaningful plots among them. Keep no more cats than can catch mice
+
+8) Eksik verilerimiz için gerekli imputationları yapın.
+8) for missing data, please make required data imputations
+
+9) Eğer inconsistent data entry varsa, düzeltin.
+9) If you find inconsistent data entry in our model, fix it.
+
+10) Kategorik değişkenleri, sayısal hale getirin.
+10) Make preprocessing to convert categorical variables to numerical ones.
+
+11) Kendi sezginize göre yeni özellik değişkenleri yaratın. (Bu kısmın önemini tahmin edebiliyorsunuzdur.) Ekstra yarattığınız her özelliği neden yarattığınızı ve ne işe yarayacağını güzel bir şekilde yorumlayın/anlatın.
+11) Create new features according to your intuition. (Which is so important). Explain why you did create these new features and how it can be useful in our project. Be sure to have enough comments.
+
+12) Mutual information skorlarına bakın. 
+12) Check mutual information scores.
+
+13) Şimdi tekrar 7. Adımdaki gibi, aslında sezginize göre mantıklı olması gereken, ancak iyi mutual information score vermeyen, değişkenlerin, tek başına hedef değişkenle veya başka değişkenlerle etkileşim halinde hedef değişkenle olan plotlarını çizdirin.(İçlerinden sadece kullanıcaklarınızı veya mantıklı gelenleri çizdirin.) Buradan çıkılan yolla, yeni özellik değişkenleri yaratabiliyorsanız yaratın.
+ 
+13) Like we did it in question 7, if you have new created features which doesn't have a good mutual information score, show their plots compared to target variable or dependence plots with other features compared to target variable. If you can find how to make them useful, create new features from created features in steps 11.
+
+14) K-means clustering ile var olan değişkenlerden faydalanarak yeni değişkenler yaratabiliyorsanız yaratın. tek başına hedef değişkenle olan plotlarını çizdirin.
+14) You can use k-means clustering from existing features to create a new features. If you can create, show their plots compared to target variable.
+
+15) Principle component analysis ile değişkenlerimizi daha anlamlı hale getirebiliyor isek, yeni değişkenleri modele ekleyin. tek başına hedef değişkenle olan plotlarını çizdirin.
+15)You can use principle component analysis from existing features to create a new features. If you can create, show their plots compared to target variable.
+
+16) İlk naif modelimizi oluşturun. (Decision Tree,Random Forest veya XGBoost)
+16) Create your first naive model. (It can be decision Tree, Random Forest or XGBoost)
+
+17) Permutation importance'larına bakın.
+17) Check their permutation importance.
+
+18) SHAP değerlerine bakın.(Shap values,2D partial Dependence Plots,Summary plots, Shap dependence Contribution plots) Bunları yorumlayın.
+18) Check their shap values. (Shap values,2D partial Dependence Plots,Summary plots, Shap dependence Contribution plots). comment on them.
+
+19) Yine yeni özellik adına bir fikir verdiyse kullanın. Mutual information skoruna bakın.
+19) Again, if you find new ideas to create new features, from step 18, create them. Check its mutual information score.
+
+20) Herhangi bir data leakage endişesi yaşıyor musunuz? Data leakage türleri nelerdir ve hangi durumlarda görülür, birer örnek verin.
+20) Do you have any concern about data leakage in our model? What type of data leakage do we learned and give some examples about them.
+
+21) Pipeline'lar yaratın.
+21) Create pipeline or pipelines.
+
+Aşağıdaki 4 adımda, dersteki gibi neg_mean_absolute_error kullanıp, eksi 1 ile de çarpabilirsiniz.
+İn the next four questions, use neg_mean_absolute_error as your evaluation method like we did it in our lesson. And then you can multiply them with -1.
+
+22) Decision Tree modeli ile, pipeline üzerinden cross validation yaparak, değişik parametreler deneyerek içlerinden en iyi sonuç vereni bulun. (Mümkün oldukça overfitten kaçının)
+22) Make cross validation via pipelines using decision tree model. Tune its parameters to have better results. At the same time, be careful about overfitting.
+
+23) Random Forest modeli ile, pipeline üzerinden cross validation yaparak, değişik parametreler deneyerek içlerinden en iyi sonuç vereni bulun. (Mümkün oldukça overfitten kaçının)
+23)Make cross validation via pipelines using random forest model. Tune its parameters to have better results. At the same time, be careful about overfitting. 
+
+24) Xgboost modeli ile, pipeline üzerinden cross validation yaparak, değişik parametreler deneyerek içlerinden en iyi sonuç vereni bulun. (Mümkün oldukça overfitten kaçının)
+24) Make cross validation via pipelines using Xgboost model. Tune its parameters to have better results. At the same time, be careful about overfitting.
+
+25) Her bir model için, en iyi modellerinizin ne olduğunu yazın. (Comment olarak.)
+Örnek->(XGBoost_model_2, Random_forest_model_5,Decision_tree_model_7 gibi.)
+25) For each method explain which one of them is your best model in your comments.
+(Example: For XGboost,XGBoost_model_2: For random forest: Random_forest_model_5, For Decision Tree: Decision_tree_model_7  )
+
+26) 25. Adımdaki en iyi modellerin içerisinden, hangisinin en iyi olduğunu düşünüyorsanız, onu da ayrıca belirtin.
+26) Among the models in question 25, declare which one of them is the best model.
+
+Yarattığınız her bir yeni özellik için bana mantıklı bir şekilde açıklama yapmanızı istiyorum. Eğer kodun word dosyası içerisinde, yeterli ve mantıklı açıklamayı yaptığınızdan emin olun.
+I want you to explain to me logically for each new feature you create. In your word files, make sure you provide adequate and logical explanation.
+
+Kod veya yorum yazma işi mümkün olduğunca sade ve açıklayıcı olmalı. Eğer düzensiz / gereksiz kodlar veya açıklamalar görürsem, doğal olarak puan kırarım. Neyin gerekli olup, olmadığını iyice düşündükten sonra kodunuzda veya yorumlarınızda bulundurun.
+Code or comments should be as simple and descriptive as possible.If I see disorganized/unnecessary codes or explanations, I naturally break points. Write code or make comments, after you've thought through what is and isn't necessary.
+
+Bu bir proje ödevi olduğu için bir cevap kağıdı oluşturmayacağım. Ancak her zamanki gibi, puanlamanız esnasında word üzerinden yorum yazacağım.(Pdf üzerine yorum yazılamıyor, veya ekstra zorluk gerektiriyor.) O yüzden kesinlikle bir word dosyamız olmalı (kod,yorum ve görseller için). 
+Since this is a project assignment, I will not create an answer sheet. However, as always, I will write a comment in word like I did it in your midterm.
+
+Tekrar edeyim, kodunuz, görseliniz veya yorumunuz mantıklı yerlerde doyurucu olmalı. Gereksiz yere uzun olursa, anlamsız olduğunu düşünüceğim için puan kıracağım.
+Again, your code, image or comment should be satisfying where it makes sense. If it's unnecessarily long, I'll deduct points as I think it's pointless.
+
+Colab üzerinden koda ulaşabileceğim ve müdahale edebileceğim bir şekilde benim paylaşmalısınız. Diğer başka hiç bir şeyi kabul etmiyorum.
+You should share it in a way that I can access and interfere with the code via Colab. I do not accept anything else.
+
+Yukarıda sayılarla verdiğim yönergeler, bir puantaj anlamı içermiyor. Bu adımlarda gördüğüm hataların derecesine göre puan kıracağım. Tabii ki vize'deki gibi bu hata arkasından başka hataları da getirirse, [vizede yapmadığım ama finalde yapacağım], puan kırarak devam edeceğim.
+The instructions I have given above with numbers do not mean a score. According to the degree of mistakes I see in these steps, I will deduct points. Of course, if this mistake brings other mistakes, as in midterm, [which I didn't do in the midterm, but I will in the final], I will continue by deducting points.
+
+İstenilenler:
+1)A) Kod ve orada o kodu niye yazdığınız (açıklamalar/comments) word dosyası [50 puan]
+Code and required explanations about where and why that code is used in there. You should make it in word file. [50 points]
+
+1)B) gerekli yerlerde küçük çıktılar da alın.(.head() gibi) Ne kadar fazla anlamlı çıktı alırsanız, o kadar fazla puan toplarsınız. (Anlamsız çıktı veya verilmesi gereken yerde verilmeyen çıktı puan kırdırır.)
+You should show your output in proper places. More meaningful outputs more points. If it is not meaningful, then you lose your points. Also, if you don't give outputs in meaningful place, you can also lose points.
+
+2) Colab'dan kodunuzun linki [50 puan] (Tabii ki bu kısmı çalıştırdığımda, tahminlerinizi, mae'nızı vs. görmek istiyorum. O yüzden attığı linkte kodu çalışmayanlar çok büyük puan (50'nin neredeyse tamamı) kaybederler.)
+You should send me your code link in Colab. (Because I also want to run your code to see outputs and how you do it). If you don't give me a link in order to make me run your code, you will lose 50 points automatically.
+
+Genel Not: Derste öğrendiklerimizi uygulayabildiğinizi görmek istiyorum.
+Ayrıca, derste öğrendiklerimizden bağımsız, açıklaması yapılmayan kod parçacıkları görürsem, iki taraftan(part 1, part 2) da puan kırarım.
+
+Warning: I want to see that you can use what we learned so far in this project. So, if you use some code parts that is unrelated with that we learn, you will lose points in both parts (part 1 and part 2)
+
+Ödevi yaparken, işlediğimiz kursları aklınızda tutun. Buradan hangi kısımlar işime yarayabilir diye düşünerek yaparsanız, ilk kısımdan o kadar çok puan alırsınız. Please keep in mind what we learned so far. So selecting/using useful information from these courses will help you in your final project.
+
+Phyton
+Pandas
+Data visualization
+İntro to machine learning
+Feature engineering
+Machine learning explainability
+Intermediate machine learning
+
+I won't accept any question during your final. But if you think, your question is so important then you can try your luck.
+Final süresi boyunca herhangi bir soru cevaplamayacağım. Ama, soracağınız sorunun çok önemli olduğunu düşünüyorsanız, şansınızı deneyebilirsiniz.
+
+Due date for final project will be 18th June.
+Final projesinin süresi, benim de son okuma vaktine yetişebilmem adına 18 hazıran olacaktır. 
+
+Good luck and have fun.
+Kolay gelsin.
+
